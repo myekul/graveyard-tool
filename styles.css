@@ -1,0 +1,41 @@
+:root {
+    --banner: darkseagreen
+}
+
+#titleText {
+    font-family: 'cuphead-felix' !important;
+    padding-top: 3px
+}
+
+.button {
+    font-family: 'cuphead-felix';
+    font-size:110%;
+    margin-top:6px;
+    height:24px
+}
+
+#table div{
+    background-color: var(--banner);
+}
+
+/* Temp */
+
+.activeBanner {
+    color: var(--bannerText);
+    background-color: var(--banner) !important;
+}
+
+.first {
+    background-color: var(--cuphead) !important;
+    color: black
+}
+
+.second {
+    background-color: silver !important;
+    color: black
+}
+
+.third {
+    background-color: darkorange !important;
+    color: black
+}
