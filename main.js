@@ -1,5 +1,6 @@
 setTitle('GRAVEYARD TOOL')
 setFooter('2025')
+setCupheadProjects()
 const indices = [-1, -1, -1]
 const words = [
     [
@@ -36,7 +37,7 @@ const words = [
 let HTMLContent = ''
 words.forEach((col, colIndex) => {
     HTMLContent += `<div id='col${colIndex}'>`
-    HTMLContent += `<img src='images/${colIndex}.png' class='container' style='height:${colIndex == 1 ? 100 : 80}px;${colIndex==1?'':'padding-top:50px'}'>`
+    HTMLContent += `<img src='images/${colIndex}.png' class='container' style='height:${colIndex == 1 ? 100 : 80}px;${colIndex == 1 ? '' : 'padding-top:50px'}'>`
     col.forEach((word, wordIndex) => {
         const id = colIndex + '-' + wordIndex
         HTMLContent += `<div id='${id}' class='button' onclick="buttonClick('${id}','col${colIndex}','activeBanner');setIndex(${colIndex},${word.n})">${word.w}</div>`
@@ -73,7 +74,8 @@ function generateTable() {
             cellContent = '3'
             className = 'third'
         }
-        HTMLContent += `<div class='${className}' style='text-align:center;padding-top:21px'>${cellContent}</div>`
+        const style = `text-align:center;padding-top:21px;${i == 4 ? 'background-color:transparent' : ''}`
+        HTMLContent += `<div class='${className}' style='${style}'>${cellContent}</div>`
     }
     HTMLContent += `</div>`
     document.getElementById('tableDiv').innerHTML = HTMLContent
